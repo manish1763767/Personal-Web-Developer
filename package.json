@@ -4,8 +4,8 @@
   "description": "A website generator using Deepseek AI API",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "build": "echo 'No build step required'",
+    "start": "npm install && node backend/server.js",
+    "build": "npm install",
     "dev": "nodemon backend/server.js"
   },
   "dependencies": {
