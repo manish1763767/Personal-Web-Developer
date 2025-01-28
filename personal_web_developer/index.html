@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">AI Website Generator</h1>
+            <p class="text-xl text-gray-600">Transform your ideas into beautiful websites with AI</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card p-8 rounded-xl">
+                <form id="websiteForm" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Left Column -->
+                        <div class="space-y-6">
+                            <div class="floating-label">
+                                <textarea 
+                                    id="description" 
+                                    class="form-input w-full"
+                                    rows="4"
+                                    placeholder=" "
+                                    required
+                                ></textarea>
+                                <label for="description">Website Description</label>
+                            </div>
+
+                            <div class="floating-label">
+                                <input 
+                                    type="text" 
+                                    id="features" 
+                                    class="form-input"
+                                    placeholder=" "
+                                >
+                                <label for="features">Key Features</label>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-6">
+                            <div class="floating-label">
+                                <input 
+                                    type="text" 
+                                    id="colorScheme" 
+                                    class="form-input"
+                                    placeholder=" "
+                                >
+                                <label for="colorScheme">Color Scheme</label>
+                            </div>
+
+                            <div class="feature-card bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="font-semibold text-gray-800 mb-2">
+                                    <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                                    Quick Tips
+                                </h3>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>• Be specific about your website's purpose</li>
+                                    <li>• Include desired interactive elements</li>
+                                    <li>• Specify your brand colors if any</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button 
+                            type="submit" 
+                            class="btn-primary w-full text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-2"
+                        >
+                            <i class="fas fa-magic mr-2"></i>
+                            <span>Generate Website</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="loading" class="hidden mt-8">
+                    <div class="flex flex-col items-center">
+                        <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-primary"></div>
+                        <p class="mt-4 text-gray-600">Creating your perfect website...</p>
+                    </div>
+                </div>
+
+                <div id="result" class="hidden mt-8">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-green-800">Your Website is Ready!</h3>
+                                <p class="text-green-700">Click below to download your custom website files</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a 
+                                id="downloadLink" 
+                                class="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                                href="#"
+                            >
+                                <i class="fas fa-download mr-2"></i>
+                                Download Website Files
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-sm">
+                    <i class="fas fa-bolt text-2xl text-yellow-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Lightning Fast</h3>
+                    <p class="text-gray-600">Generate your website in seconds with our advanced AI</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-sm">
+                    <i class="fas fa-paint-brush text-2xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Custom Design</h3>
+                    <p class="text-gray-600">Tailored to your brand and preferences</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-sm">
+                    <i class="fas fa-code text-2xl text-purple-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Clean Code</h3>
+                    <p class="text-gray-600">Professional, well-structured code that's ready to deploy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
